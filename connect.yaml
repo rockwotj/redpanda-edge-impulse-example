@@ -1,0 +1,13 @@
+input:
+  stdin:
+    scanner:
+      lines:
+        max_buffer_size: 131072
+pipeline:
+  processors:
+  - label: edge_impulse_ai_wasm_processor
+    redpanda_data_transform:
+      module_path: /app.wasm
+output:
+  stdout:
+    codec: lines
